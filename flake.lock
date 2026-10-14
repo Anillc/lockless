@@ -103,11 +103,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1791909867,
-        "narHash": "sha256-WZxRSr1NV6n6IJ7a/yNZM8e/J6DLn8atRmCa2OlWllw=",
+        "lastModified": 1791960431,
+        "narHash": "sha256-0tfNB+33ERviUfE4E+BE+Zs7ghb5piyHZQRYLAdWu4k=",
         "owner": "Anillc",
         "repo": "substituter-api",
-        "rev": "56779aee49d314ae464ef93c425dc4ed724e44a9",
+        "rev": "240713dab35136bc349b45bd8aa9170683ab7e86",
         "type": "github"
       },
       "original": {

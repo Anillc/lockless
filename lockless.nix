@@ -27,9 +27,10 @@
   '';
 
   wantedDependencies = { optional, peer }: deps:
-    (deps.dependencies or {})
-    // lib.optionalAttrs optional (deps.optionalDependencies or {})
-    // lib.optionalAttrs peer (deps.peerDependencies or {});
+    lib.filterAttrs (_: spec: !(lib.hasPrefix "npm:" spec))
+      ((deps.dependencies or {})
+      // lib.optionalAttrs optional (deps.optionalDependencies or {})
+      // lib.optionalAttrs peer (deps.peerDependencies or {}));
 
   # stable-npm only serves `latest`, so that is the version we follow.
   dependenciesOf = { optional, peer }: doc:
