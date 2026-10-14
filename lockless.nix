@@ -138,7 +138,8 @@ in {
     mkNodeModules = args: pkgs.importNpmLock.buildNodeModules {
       inherit (args) package;
       nodejs = args.nodejs or defaultNodejs;
-      packageLock = fromJSON (readFile "${self'.lib.mkLock args}/package-lock.json");
+      derivationArgs = args.derivationArgs or {};
+      packageLock = fromJSON (readFile "${self'.lib.mkLock (builtins.removeAttrs args [ "derivationArgs" ])}/package-lock.json");
     };
   };
 }

@@ -31,8 +31,9 @@ nix.settings = {
 
 ## mkLock / mkNodeModules
 
-Both take the same arguments. `mkLock` returns a directory containing
-`package-lock.json`, `mkNodeModules` returns the `node_modules` directory.
+`mkLock` returns a directory containing `package-lock.json`; `mkNodeModules`
+returns the `node_modules` directory. `mkNodeModules` takes the same arguments
+as `mkLock` plus `derivationArgs`.
 
 | argument | type | default | meaning |
 | --- | --- | --- | --- |
@@ -42,6 +43,7 @@ Both take the same arguments. `mkLock` returns a directory containing
 | `optional` | bool | `true` | resolve `optionalDependencies` too |
 | `peer` | bool | `false` | resolve `peerDependencies` too |
 | `nodejs` | package | `pkgs.nodejs` | node used to run npm |
+| `derivationArgs` | attrset | `{}` | (`mkNodeModules` only) extra arguments forwarded to the underlying `stdenv.mkDerivation`, e.g. `pname`, `version`, `nativeBuildInputs`, `buildInputs`, `postPatch`, `passAsFile` |
 
 `date` and `package` are required, the rest have defaults.
 
