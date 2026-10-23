@@ -6,7 +6,7 @@
 
   # Scoped names encode their slash so the name stays one path segment.
   packumentUrl = date: name:
-    "http://127.0.0.1:3000/${date}/${replaceStrings [ "/" ] [ "%2f" ] name}";
+    "http://127.0.0.1:3002/${date}/${replaceStrings [ "/" ] [ "%2f" ] name}";
 
   # One poke for the whole batch.  The layout matches npm's requests
   # (`/@scope%2fname` decodes to `@scope/name`), and reading from here
